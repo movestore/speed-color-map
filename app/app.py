@@ -24,6 +24,7 @@ class App(object):
 
     @hook_impl
     def execute(self, data: TrajectoryCollection, config: dict) -> TrajectoryCollection:
+        logging.info(f'got called w/ \'{data}\' and \'{config}\'')
         app_config = self.map_config(config=config)
         data.add_speed(overwrite=True)
         plot = data.plot(
@@ -32,5 +33,7 @@ class App(object):
             capstyle='round',
             legend=app_config.with_legend
         )
-        plot.figure.savefig(self.moveapps_io.create_artifacts_file('plot.png'))
+        plot_file = self.moveapps_io.create_artifacts_file('plot.png')
+        plot.figure.savefig(plot_file)
+        logging.info(f'saved plot to \'{plot_file}\'')
         return data
