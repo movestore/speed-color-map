@@ -24,7 +24,6 @@ class App(object):
 
     @hook_impl
     def execute(self, data: TrajectoryCollection, config: dict) -> TrajectoryCollection:
-        logging.info(f'got called w/ \'{data}\' and \'{config}\'')
         app_config = self.map_config(config=config)
         data.add_speed(overwrite=True)
         plot = data.plot(
