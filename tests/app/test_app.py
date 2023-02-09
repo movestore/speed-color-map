@@ -23,3 +23,28 @@ class MyTestCase(unittest.TestCase):
 
         # verif
         self.assertEqual(expected, actual)
+
+    def test_app_config_mapping(self):
+        # prepare
+        config = {
+            "line_width": 10,
+            "legend": True
+        }
+
+        # execute
+        actual = self.sut.map_config(config=config)
+
+        # verify
+        self.assertEqual(10, actual.line_width)
+        self.assertTrue(actual.with_legend)
+
+    def test_app_config_mapping_defaults(self):
+        # prepare
+        config = {}
+
+        # execute
+        actual = self.sut.map_config(config=config)
+
+        # verify
+        self.assertEqual(5, actual.line_width)
+        self.assertFalse(actual.with_legend)
