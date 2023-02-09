@@ -16,7 +16,7 @@
     }
   ],
   "providedAppFiles": [],
-  "createsArtifacts": false,
+  "createsArtifacts": true,
   "license": {
     "key": "MIT"
   },
