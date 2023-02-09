@@ -15,7 +15,8 @@ class App(object):
     def __init__(self, moveapps_io):
         self.moveapps_io = moveapps_io
 
-    def map_config(self, config: dict):
+    @staticmethod
+    def map_config(config: dict):
         return AppConfig(
             line_width=config['line_width'] if 'line_width' in config else 5,
             with_legend=config['legend'] if 'legend' in config else False
