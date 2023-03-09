@@ -32,7 +32,7 @@ class App(object):
             capstyle='round',
             legend=app_config.with_legend
         )
-        plot_file = self.moveapps_io.create_artifacts_file('plot.png')
+        plot_file = self.moveapps_io.create_artifacts_file('speed_map.png')
         plot.figure.savefig(plot_file)
         logging.info(f'saved plot to \'{plot_file}\'')
         return data
