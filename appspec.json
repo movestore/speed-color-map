@@ -3,7 +3,7 @@
     {
       "id": "line_width",
       "name": "Line width",
-      "description": "The width of the lines in the plot.",
+      "description": "Provide the width of the lines in the plot.",
       "defaultValue": 2,
       "type": "INTEGER"
     },
@@ -23,14 +23,15 @@
   "language": "eng",
   "keywords": [
     "example",
-    "template"
+    "speed",
+    "map"
   ],
   "people": [
     {
-      "firstName": "Charles",
+      "firstName": "Clemens",
       "middleInitials": null,
-      "lastName": "Darwin",
-      "email": "creator@example.com",
+      "lastName": "Hahn",
+      "email": "clemens+moveapps@couchbits.com",
       "roles": [
         "author",
         "creator"
@@ -40,21 +41,8 @@
       "affiliationRor": null
     }
   ],
-  "funding": [
-    {
-      "name": "funder name",
-      "comment": "grant for App"
-    }
-  ],
-  "references": [
-    {
-      "type": "IsDescribedBy",
-      "note": "Darwin, C. 1900. The creation. Journal XY. 1-2",
-      "url": "https://anylink.xyz"
-    }
-  ],
   "documentation": {
-    "url": "https://github.com/yourAccount/my-app/README.md"
+    "url": "https://github.com/movestore/speed-color-map/blob/main/README.md"
   }
 }
 
