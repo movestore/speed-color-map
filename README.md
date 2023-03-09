@@ -1,43 +1,33 @@
-# {Name of App}
-
-*Give your app a short and informative title. Please adhere to our convention of Title Case without hyphens (e.g. `My New App`)*
+# Speed Colour Map
 
 MoveApps
 
-Github repository: *github.com/yourAccount/Name-of-App* *(the link to the repository where the code of the app can be found must be provided)*
-
-## SDK
-
-As an **app developer** you should have a look into the [SDK onboarding document](sdk-onboarding.md). 
-*Please delete this section for your final app documentation*
+Github repository: *github.com/movestore/speed-color-map*
 
 ## Description
-*Enter here the short description of the App that might also be used when filling out the description when submitting the App to Moveapps. This text is directly presented to Users that look through the list of Apps when compiling Workflows.*
+This is a simple Python Example App that generates a plot of the tracks coloured by speed.
 
 ## Documentation
-*Enter here a detailed description of your App. What is it intended to be used for. Which steps of analyses are performed and how. Please be explicit about any detail that is important for use and understanding of the App and its outcomes.*
+Using the MovingPandas package, each location of all tracks is assinged a speed using the add_speed() function. The tracks are then plotted very simply, but each location is coloured by its estimated speed. This provides an idea where the animals were moving faster or slower. Line width can be selected and if a legend is to be added.
 
 ### Input data
-*Indicate which type of input data the App requires. Currently only R objects of class `MoveStack` can be used. This will be extend in the future.*
-
-*Example*: MoveStack in Movebank format
+TrajectoryCollection of the MovingPandas package
 
 ### Output data
-*Indicate which type of output data the App produces to be passed on to subsequent apps. Currently only R objects of class `MoveStack` can be used. This will be extend in the future. In case the App does not pass on any data (e.g. a shiny visualization app), it can be also indicated here that no output is produced to be used in subsequent apps.*
-
-*Example:* MoveStack in Movebank format
+TrajectoryCollection of the MovingPandas package
 
 ### Artefacts
-*If the App creates artefacts (e.g. csv, pdf, jpeg, shapefiles, etc), please list them here and describe each.*
-
-*Example:* `rest_overview.csv`: csv-file with Table of all rest site properties
+`speed_map.png`: Simple map of tracks coloured by speed.
 
 ### Parameters 
-*Please list and define all parameters that the App requires to be set, if necessary including their unit.*
+**Line width (`line_width`)**: Defined width of track lines in plot. Default: 2.
 
-*Example:* `radius`: Defined radius the animal has to stay in for a given duration of time for it to be considered resting site. Unit: `metres`.
+**Include legend? (`legend`)**: Indicate if a legend shall be included in the plot. Default: false.
 
 ### Null or error handling
-*Please indicate for each parameter as well as the input data which behaviour the App is supposed to show in case of errors or NULL values/input. Please also add notes of possible errors that can happen if parameters are improperly set and any other important information that you find the user should be aware of.*
+**Setting `line_width`**: must be a positive value. If too large or too small, the tracks might become difficult to see.
 
-*Example:* **Parameter `radius`:** If no radius AND no duration are given, the input data set is returned with a warning. If no radius is given (NULL), but a duration is defined then a default radius of 1000m = 1km is set. 
+**Setting `legend`:** The legend makes the plot area smaller, but allows to discern which speeds the colours indicate.
+
+**Data**: Input data are returned.
+
